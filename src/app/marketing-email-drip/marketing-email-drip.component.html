@@ -1,0 +1,14 @@
+<div class="matcard">
+  <div class="matcard-header">
+    MUST READ to the customer *
+  </div>
+</div>
+<label for="marketingEmailDripContainer"><b style="color: red;">"Can we use the email address you provided to send you updates on products and services that we offer?"</b></label>
+<div class="radio-button" id="marketingEmailDripContainer">
+  <mat-radio-group [(ngModel)]="emailDrip" aria-label="Select an option" (change)="getEmailDrip($event)" required>
+    <mat-radio-button value="true">Yes</mat-radio-button>
+    <mat-radio-button value="false">No</mat-radio-button>
+  </mat-radio-group>
+</div>
+<app-loader [loaderOn]="loaderOn" [loaderTitle]="loaderTitle"></app-loader>
+<app-message [display]="answerWithError" [message]="ErrorMessage"></app-message>

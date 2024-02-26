@@ -1,0 +1,30 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+@import "../styles/responsive.scss";
+
+.matcard {
+  background-color: #DAECF6;
+  padding: 20px;
+  color: #7E9DAA;
+  .matcard-header {
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 2px solid #7E9DAA;
+    color: #7E9DAA;
+    .matcard-header {
+      font-weight: bold;
+      font-size: 20px;
+      border-bottom: 2px solid #7E9DAA;
+      color: #7E9DAA;
+      margin-bottom: 23px;
+      display: flex;
+      height: 40px;
+    }
+    @media only screen and (max-width: 1200px) {
+      margin: 10px;
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    margin: 10px;
+  }
+}

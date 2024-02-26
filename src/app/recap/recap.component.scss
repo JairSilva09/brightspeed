@@ -1,0 +1,54 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+@import "../styles/responsive.scss";
+.content {
+    width: 98%;
+    height: 85%;
+    background-color: $content-background;
+    margin: -11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    color: $vs-blueO-button;
+    border-bottom: solid 3px $vs-blueO-button;
+    border-bottom-color: $vs-blueO-button;
+    width: 98%;
+    display: flex;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+.text1 {
+    border-bottom: 1px solid $color-grey;
+    padding-bottom: 10px;
+}
+
+.text-orange {
+    color: $text-orange;
+}
+
+.well {
+    color: $color-purple;
+    background-color: $grey-chip;
+    border-radius: 5px;
+}
+
+.ng-hide {
+    border-bottom: 1px solid $color-grey;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+
+.button-orange {
+    background-color: $btn-color-orange;
+    border-radius: 5px;
+    border: none;
+    color: $btn-color-blue;
+    padding: 10px 20px;
+    float: right;
+}
+
+.button-disabled {
+    background-color: gray;
+}

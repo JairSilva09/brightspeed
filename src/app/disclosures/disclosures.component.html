@@ -1,0 +1,78 @@
+<div style=" margin-top: 20px;
+display: flex;
+flex-direction: column;
+gap: 1px;
+height: 600px;
+overflow: scroll;">
+
+    <div>
+
+        <div>
+            <!---->
+            <div>
+
+
+                <div class="well-disclosures">
+                    <div style="padding: 40px">
+                        <b>Commitment and Service Disclosures:</b> <br> <br> Your Internet service comes with a 24-month minimum service commitment.<br><br> • If you cancel early, you’ll be automatically charged $15 for each remaining month of your minimum
+                        service commitment.<br><br> All fees are automatically charged to your payment method on file. <br><br> Your monthly bill will include the cost of your plan, equipment, and any addition services orders and is ${{showingCart?.cart_total_prices[0]?.amount?.value}}
+                        per month for the first {{getDuration(findObjectWithValidDuration(showingCart?.cart_items),'Duration')?getDuration(findObjectWithValidDuration(showingCart?.cart_items),'Duration'):''}} months, plus any applicable taxes and surcharges.
+                        Fidium is a paperless company, and your monthly bill will be delivered electronically via email each month. <br><br> We will preauthorize your credit or debit card for $60 today to confirm that you have a valid payment method.
+                        <br><br> • You’ll need to provide the last four digits of this payment method to your installation technician in order to activate your service. <br><br>
+
+                        <b>If installation fee is required:</b> As a reminder, today we are also collecting a onetime standard installation fee of ${{showingCart?.cart_total_prices[1]?.amount.value}} .” <br><br> Your first month’s bill will be charged
+                        to the payment method on file within 2-4 days of installation. <br><br>
+
+                        <b>Data and Speed Disclosures:</b><br><br> Per our Unlimited Data Policy, after you use your allotted {{ getCharacteristicValue(showingCart?.product_types[0], "DATA_CAP") }} GB of High-Speed Data, you will continue to receive unlimited
+                        data (referred to as “Standard Data”); however, Fidium may prioritize Standard Data behind other customers during network congestion, which will result in slower speeds.<br><br> Internet speeds are “up to,” will vary and are not
+                        guaranteed.<br><br> VPN connections that some people use to work from home and some other remote computer access software may be very slow. Some VPNs may not work at all.<br><br> The performance of some games over the Internet
+                        is very poor and some games may not work at all.
+                        <br><br>
+
+                        <b>Installation Disclosures:</b> <br><br> We will be installing a satellite antenna at your house. Usually on the roof or side of your house.
+                        <br><br> • If you rent your house, make sure you have your landlord’s permission before your installation.
+                        <br><br> • If your installation requires a non-standard installation, there will be an additional charge.
+                        <br><br> • Remember this is leased equipment; you will have to send it back when you are done with it or be charged a $300 unreturned equipment fee.<br><br> • Once the installer has completed your installation, you’ll review and
+                        sign Fidium’s online customer agreement. If you can’t be there, please make sure somebody over 18, who’s authorized to sign the agreement on your behalf is available.<br><br>
+
+                        <div *ngIf="IfOfficeHours">
+                            <b>Office Hours:</b> <br><br> • Available time for Office Hours may vary by location. Includes web browsing, bulk transfers, real-time communications, network storage, social networking, VPN and email. Not all internet traffic
+                            sources are identifiable and available to benefit from Office Hours. Office Hours does not include video streaming, real-time entertainment, peer-to-peer networking, gaming, and any other categories of internet content not
+                            specifically stated above. For additional details, see the FAQ document at https://vsat.co/officehoursfaqs. <br><br>
+                        </div>
+                        <div *ngIf="IfFidiumShieldPremium">
+                            <b>If Fidium Shield Premium:</b> <br><br> • Fidium Shield is available for iPhone with iOS v9.0 or higher and for Android with v4.1 or higher. Fidium Shield application is not supported on tablets. <br><br> • Your monthly service
+                            fee for Fidium Shield Premium is billed by and paid to Fidium. After you activate Fidium Shield Premium, it may take up to 40-hours for the premium features to be activated on your account. To deactivate Fidium Shield Premium
+                            features, please call Fidium Customer Care. <br><br>
+                        </div>
+                        <div *ngIf="IfFidiumSteam">
+
+                            <b>If Fidium Steam:</b> <br><br> • Fidium Stream is available with participating streaming providers and requires an account with that provider. Fidium may add or remove participating content providers at any time. Fidium Stream
+                            is currently in beta and Fidium reserves the right to modify or discontinue it at any time upon notice. You may cancel Fidium Stream at any time by contacting Fidium Customer Care.
+                            <br><br> • Fidium Stream requires a hub that must be connected to the Fidium modem and plugged in to enjoy the benefits of Fidium Stream. If your hub is not connected, streaming content may count towards your plan's data usage.
+                            A hub will be shipped to you within 10 business days. Be sure to install the hub as soon as you receive it. If you do not receive your hub within 10 days after placing your order, please contact Fidium Customer Care so that
+                            we may address the situation. Please remember that you must return the hub to Fidium within 30 days of canceling Fidium Stream or you will be charged $100 for an unreturned equipment fee. <br><br> • Fidium Stream does not work
+                            on devices that are using a VPN, does not work on third-party routers or with Wi-Fi extenders, and may not be available in all formats. Video quality is "up to," will vary and is not guaranteed. <br><br>
+                        </div>
+                        <div *ngIf="IfFidiumVoice">
+
+                            <b>If Fidium Voice:</b> <br><br> • Your monthly Voice service fee is $35.00 [for CAF customers 29.99], in addition to your monthly Internet service fee. By ordering Fidium Voice at the same time as ordering Fidium Internet,
+                            you will receive a saving of $10 per month on your Voice bill for the first full three months [for CAF customers 6 months] of services, provided you continue to receive both Fidium Internet and Voice services.<br><br> • Your
+                            monthly service fees and any other fees you incur plus applicable taxes, E911 fees and other regulatory fees are automatically charged to your payment method on file. You will be billed separately for calls you make to destinations
+                            outside of the fifty United States, the District of Columbia and Canada and for directory assistance calls. If you incur more than $200 in Voice toll charges in a billing period, we may charge them prior to the end of your
+                            billing cycle to your payment method on file. <br><br> • In order for your 911 calls to be properly directed to emergency services, Fidium must have the address on file where the Voice equipment is located. Please note the
+                            service address you provided today is the address to which emergency services will be directed when you call 911.
+                            <br><br> • Your Voice service comes with a 6-month commitment. You will be billed $10 for each remaining month of the commitment should you decide to cancel the service early, [Read this only to CAF-II Customers] unless you
+                            are bundling with the Connection 25 Internet service.<br><br> • You cannot receive the Voice service without also receiving Fidium’s Internet service, [Read this only to CAF-II Customers] unless you qualify for the Voice-Only
+                            Connection Plan.
+                            <br><br> • Voice may not work well with fax machines, security systems or other analog data services and devices.
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,14 @@
+<div *ngIf="display" class="message-container">
+
+    <div class="message-card">
+
+        <h2>Message:</h2>
+        <h3>{{ message }}</h3>
+        <p>{{ description }}</p>
+        <div class="button-container">
+            <button class="accept-button" (click)="onAccept()">Accept</button>
+            <button class="cancel-button" (click)="onCancel()">Cancel</button>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+export const environment = {
+    production: true,
+    webBaseUrl: 'https://api-prod.infsalesgroup.com',
+    webBaseUrl_ISG_Backend: window.location.protocol + '//' + window.location.hostname +'/isg-backend/public/index.php/',
+    webBaseUrl_DOT_COLOR: window.location.protocol + '//' + window.location.hostname + '/isg-dot-color/public/index.php/',
+    webBaseUrl_AWS: 'https://api-prod.infsalesgroup.com/',
+    provider: "earthlink",
+    email: "api@isg.us",
+    emailVerification: "https://1guuhspk57.execute-api.us-east-1.amazonaws.com/prod",
+    emailVerificationToken: "V4q0dkE4her$Y3RHCGFUG9t!XKJRQbsYW4DO?#bl",
+    password: "api@isg",
+    emailToken :   "marketing@isg.us",
+    passwordToken : "MarketingApiIsg2023!!",
+    promocode: "07280",
+    businnesPromocode: "07563",
+    clientName: "infinity",
+    encryptionScript : 'https://safetechpageencryption.chasepaymentech.com/pie/v1/encryption.js',
+    encryptionScriptKey : 'https://safetechpageencryption.chasepaymentech.com/pie/v1/64100000000198/getkey.js',
+  };
+  

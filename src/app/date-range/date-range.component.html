@@ -1,0 +1,9 @@
+<mat-form-field>
+  <mat-label>Choose Date Range</mat-label>
+  <mat-date-range-input [max]="maxDate" [min]="minDate" [rangePicker]="picker" [formGroup]="dateRange" (rangeChange)="onDateRangeChange($event)">
+    <input matStartDate formControlName="start" placeholder="Start Date" (dateChange)="onStartDateChange($event)">
+    <input matEndDate formControlName="end" placeholder="End Date" (dateChange)="onEndDateChange($event)">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>

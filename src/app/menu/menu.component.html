@@ -1,0 +1,22 @@
+<div class="menu-container">
+    <div class="logos" #logosContainer style="display: flex;justify-content: flex-start;align-items: center;gap: 10px;margin: 30px 0 20px 30px">
+      
+        <img src="assets/LOGO.PNG" alt="Logo 1" class="header__logo" style="    width: 265px;
+        height: 51px;" />
+
+        <!-- <span style="font-size: 10px;">v1.0.4</span> -->
+    </div>
+    <div class="menu-container" [ngClass]="{'fixed-menu': isMenuFixed}" #menuContainer>
+        <div class="menu-buttons">
+            <mat-button-toggle-group aria-label="Menu Items" name="menuItems" [(ngModel)]="selectedMenuItem" class="full-width">
+                <mat-button-toggle class="button" value="Address" routerLinkActive="button-active" (click)="selectMenuItem('Address')" [routerLink]="'/address'" [ngClass]="{ 'button-active': selectedMenuItem === 'Address' }">Address</mat-button-toggle>
+                <mat-button-toggle class="button" value="Offers" routerLinkActive="button-active" [ngClass]="{ 'button-active': selectedMenuItem === '/products' }">Offers</mat-button-toggle>
+                <mat-button-toggle class="button" *ngIf="showTagClosingOffers" value="closing" routerLinkActive="button-active" [ngClass]="{ 'button-active': selectedMenuItem === '/closing' }">Closing Offers</mat-button-toggle>
+                <mat-button-toggle class="button" value="Billing" routerLinkActive="button-active" [ngClass]="{ 'button-active': selectedMenuItem === '/billing' }">Billing</mat-button-toggle>
+                <mat-button-toggle class="button" value="Installation" routerLinkActive="button-active" [ngClass]="{ 'button-active': selectedMenuItem === '/installation' }">Installation</mat-button-toggle>
+                <mat-button-toggle class="button" value="Recap" routerLinkActive="button-active" [ngClass]="{ 'button-active': selectedMenuItem === '/recap' }">Recap</mat-button-toggle>
+                <mat-button-toggle class="button" value="Confirmation" routerLinkActive="button-active" [ngClass]="{ 'button-active': selectedMenuItem === '/confirmation' }">Confirmation</mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </div>
+</div>

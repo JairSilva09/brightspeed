@@ -1,0 +1,14 @@
+<div class="matcard" [ngClass]="{'selected-matcard': product.selected}">
+    <div class="matcard-content" [ngClass]="{'selected-matcard-content': product.selected}">
+        <div class="matcard-header" [ngClass]="{'selected-matcard-header': product.selected}">
+            <p>{{ product.PlanName }}</p>
+            <p class="price">${{product.recurringAmount}}/mo*</p>
+        </div>
+        <ul [ngClass]="{'selected-ul': product.selected}">
+            <li *ngFor="let description of productDestriptions" [ngClass]="{'selected-li': product.selected}">{{description}}</li>
+        </ul>
+        <button type="button" (click)="addProductCart()" class="button" [ngClass]="{'selected-button': product.selected}">
+          SELECT PLAN
+      </button>
+    </div>
+</div>

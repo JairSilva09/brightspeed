@@ -1,0 +1,30 @@
+<div class="modal" [style.display]="display">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close-button" (click)="closeModal()">&times;</span>
+            <h1 style="    font-size: 1.5rem;">We found multiple addresses, please select one</h1>
+        </div>
+        <div class="modal-body">
+            <mat-table [dataSource]="addresses" class="mat-elevation-z8 table-content">
+                <ng-container matColumnDef="address">
+                    <mat-header-cell *matHeaderCellDef style="font-size: 166%;"> Address </mat-header-cell>
+                    <mat-cell class="select-address" [class.selected]="address === selectedAddress" *matCellDef="let address" (mouseenter)="hoveredRow = address" (mouseleave)="hoveredRow = null" [class.hovered]="hoveredRow === address">
+                        {{address.addressLine1}}, {{address.addressLine2}}
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row style="    width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;" *matRowDef="let row; columns: displayedColumns;" [class.selected]="row === selectedAddress" (click)="selectAddress(row)" (mouseenter)="hoveredRow = row" (mouseleave)="hoveredRow = null" [class.hovered]="hoveredRow === row">
+                </mat-row>
+            </mat-table>
+
+        </div>
+        <div class="modal-button">
+            <button type="button" class="btn btn-custom" [disabled]="!addressHasSelected" (click)="sendAddress()"><strong>Accept</strong></button>
+            <button type="button" class="btn btn-custom" (click)="closeModal()"><strong>Close</strong></button>
+        </div>
+    </div>
+</div>

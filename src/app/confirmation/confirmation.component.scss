@@ -1,0 +1,86 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+@import "../styles/responsive.scss";
+.content {
+    width: 98%;
+    height: 85%;
+    background-color: $content-background;
+    margin: -11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    color: $vs-blueO-button;
+    border-bottom: solid 3px $vs-blueO-button;
+    border-bottom-color: $vs-blueO-button;
+    width: 98%;
+    display: flex;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+.text-orange {
+    color: $text-orange;
+}
+
+.titleH4 {
+    border-bottom: 1px solid $color-grey;
+    padding-bottom: 10px;
+}
+
+.text1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $text-orange;
+    font-weight: bold;
+}
+
+.text2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $text-orange;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.ng-hide {
+    border-bottom: 1px solid $color-grey;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+
+.well {
+    color: $color-purple;
+    background-color: $grey-chip;
+    border-radius: 5px;
+}
+
+.button {
+    border: 0;
+}
+
+.button-orange {
+    background-color: #f08a2b;
+    color: white;
+    padding: 20px;
+}
+
+.button-disabled {
+    background-color: gray;
+    color: white;
+}
+
+.card-button {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 60px;
+    margin-top: 50px;
+}
+
+.button-shadow {
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.15);
+}

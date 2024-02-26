@@ -1,0 +1,99 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+@import "../styles/responsive.scss";
+
+.container-fullcalendar{
+    width: 95%;
+    margin: auto;
+}
+.button{
+    border: 0;
+  }
+    .card-button{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2px;
+  }
+  .button-disabled {
+    background-color: gray;
+    color: white;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    height: 56px;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    background-color: $vs-blue;
+    color: #fff;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+.button{
+  border: 0;
+}
+
+.button-orange{
+  background-color: #f08a2b;
+  color: white;
+  padding: 20px;
+}
+
+.button-disabled {
+    background-color: gray;
+    color: white;
+}
+
+.card-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 65px;
+  margin-bottom: 15px;
+}
+
+.button-shadow{
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.15);
+  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.15);
+}
+
+.content-disclosures {
+  width: 98%;
+  height: 85%;
+  background-color: $content-background;
+  border-left: solid 15px$border-color-green;
+  border-right: solid 15px$border-color-green;
+  margin: -11px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title-disclosures {
+  color: $color-green2;
+  border-bottom: solid 3px $color-green2;
+  border-bottom-color: $color-green2;
+  width: 98%;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.well-disclosures {
+  color: $color-purple;
+  background-color: $grey-chip;
+  border-radius: 5px;
+}

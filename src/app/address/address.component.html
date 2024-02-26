@@ -1,0 +1,172 @@
+<div style="margin: 30px;display: flex;flex-direction: column;gap: 1px;">
+    <div class="content-address">
+        <div class="title">
+            <h4 style=" font-size: 1.5rem;">Service Avaibility</h4>
+        </div>
+        <div class="inputs">
+            <div class="form">
+                <div class="inputs1">
+                    <label for="first-name"> <b style="color: red;">*</b> First Name:</label>
+                    <input id="first-name" name="first-name" type="text" class="input-style" (blur)="onFirstNameBlur()" [(ngModel)]="firstName" (keyup)="validateField($event.target)" required>
+                    <div *ngIf="isFirstNameTouched && firstName === ''" class="error-message">First Name is required
+                    </div>
+                </div>
+                <div class="inputs1">
+                    <label for="last-name"> <b style="color: red;">*</b>Last Name:</label>
+                    <input id="last-name" name="last-name" type="text" class="input-style" (blur)="onLastNameBlur()" [(ngModel)]="lastName" (keyup)="validateField($event.target)" required>
+                    <div *ngIf="isLastNameTouched && !lastName " class="error-message">Last Name is required</div>
+                </div>
+                <div class="inputs1">
+                    <label for="email"><b style="color: red;">*</b>Email Address:</label>
+                    <input id="email" type="email" name="email" class="input-style" (keyup)="validateFiledEmail($event.target)" [(ngModel)]="email" (blur)="onEmailBlur()" required>
+                    <div *ngIf="isEmailTouched && !email" class="error-message">Email Address is required</div>
+                    <span *ngIf="isEmailTouched && messageEmail != ''" style="color: red;">{{messageEmail}}</span>
+                    <p style="margin-top: -7px;font-size: 13px;">If customer does not have an email, do not proceed with order
+                    </p>
+                </div>
+            </div>
+            <div class="form">
+                <div class="inputs1">
+                    <label for="phone"><b style="color: red;">*</b>Phone:</label>
+                    <input id="phone" [(ngModel)]="phone" name="phone" type="tel" (blur)="onPhoneTouched()" (keyup)="validateFiledPhone($event.target)" class="input-style">
+                    <div *ngIf="isPhoneTouched && !phone" class="error-message">Phone is required</div>
+                    <span ng-if="messagePhone != ''" style="color: red;">{{messagePhone}}</span>
+                </div>
+                <div class="inputs1">
+                    <label for="secondary-phone">Secondary Phone:</label>
+                    <input id="secondary-phone" [(ngModel)]="secondaryPhone" name="second-phone" type="tel" class="input-style">
+                </div>
+            </div>
+        </div>
+        <p style="margin: 22px;">Enter the address where you need service and we'll search plans in your area.</p>
+        <div class="title">
+            <h4 style=" font-size: 1.5rem;">Service Address</h4>
+        </div>
+        <div class="inputs">
+            <div class="form">
+                <div class="inputs1">
+                    <label for="address"><b style="color: red;">*</b>Street Address:</label>
+                    <input id="address" pattern="^[a-zA-Z0-9 ]*$" name="street-address" type="text" [(ngModel)]="addressLine1" class="input-style input-left" (blur)="onAddressBlur()" (keyup)="validateField($event.target)">
+                    <div *ngIf="isAddressTouched" class="error-message">Street Address is required
+                    </div>
+                </div>
+            </div>
+            <div class="form">
+                <div class="inputs1">
+                    <label for="city"><b style="color: red;">*</b>City:</label>
+                    <input id="city" name="city" [(ngModel)]="serviceCity" (blur)="onCityBlur()" type="text" class="input-style input-left" (keyup)="validateField($event.target)">
+                    <div *ngIf="isCityTouched && !serviceCity" class="error-message">City is required</div>
+                </div>
+            </div>
+            <div class="form">
+                <div class="inputs1">
+                    <div class="form-group">
+                        <label for="stateSelect"><b style="color: red;">*</b>State:</label>
+                        <select #select id="stateSelect" name="state" [(ngModel)]="serviceState" class="form-control input-left" (blur)="onStateBlur()" (change)="validateField($event.target)">
+                            <option selected="selected" value="">Choose state</option>
+
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <div *ngIf="isStateTouched && !serviceState" class="error-message">State is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form">
+                <div class="inputs1">
+                    <label for="zip"><b style="color: red;">*</b>Zip:</label>
+                    <input id="zip" name="zip" [(ngModel)]="serviceZip" (blur)="onZipBlur()" type="text" class="input-style input-left" (keyup)="validateField($event.target)">
+                    <p style="margin-top: -7px;font-size: 20;">Look Up a Zip Code</p>
+                    <div *ngIf="isZipTouched && !serviceZip" class="error-message">Zip is required</div>
+                </div>
+            </div>
+            <div class="matcard">
+                <div class="matcard-header">
+                    Residential Order
+                </div>
+                <div class="matcard-content">
+                    Only residential orders may be submitted at this time – if this caller needs services for their business, please transfer to ISG’s Business Team via the transfer extension in your phone book (5322).
+                </div>
+            </div>
+            <div>
+                <label for="currentCustomerContainer"><b style="color: red;">"Do you currently have Fidium service at the address you are calling about?"</b></label>
+                <div class="radio-button" id="currentCustomerContainer">
+                    <mat-radio-group [(ngModel)]="currentCustomer" name="currencyFidium" (ngModelChange)="setCurrentCustomerValue()" aria-label="Select an option" required>
+                        <mat-radio-button value="true">Yes</mat-radio-button>
+                        <mat-radio-button value="false">No</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div *ngIf="currentCustomer === 'true'"><b style="color: red;">We are not able to upgrade to add additional Fidium services if they already exist at this address. Please refer the caller to Fidium care.</b></div>
+            </div>
+            <div>
+                <app-marketing-email-drip [earthlinkCoreData]="earthlinkCoreData" (emailDripEvent)="setEmailDrip($event)"></app-marketing-email-drip>
+            </div>
+            <div class="card-button">
+                <button (click)="submitData()" class="button-next-previous button-orange button-shadow" [disabled]="isNextButtonDisabled()" [ngClass]="{'button-disabled': isNextButtonDisabled()}">Next</button>
+            </div>
+            <div *ngIf="earthlinkCoreData.isDevMode" class="form">
+                <div class="inputs1" style="width: 30%">
+                    <div class="form-group">
+                        <label for="stateSelect">TEST QUALIFY:</label>
+                        <select #testSelect id="testqualyfy" name="test" class="form-control input-left" (change)="updateInputs(testSelect.value)">
+                            <option selected value="">Select a test Case</option>
+                            <option *ngFor="let item of TEST" value={{item.title}}>{{item.title}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <app-modal-address [display]="displayModal" [addresses]="eligibleAddresses" (onClose)="closeModal()" (emitAddress)="setAddress($event)"></app-modal-address>
+        </div>
+    </div>
+</div>
+<app-loader [loaderOn]="loaderOn" [loaderTitle]="loaderTitle"></app-loader>
+<app-message [display]="answerWithError" [message]="ErrorMessage"></app-message>

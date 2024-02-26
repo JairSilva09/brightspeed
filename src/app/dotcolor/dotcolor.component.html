@@ -1,0 +1,42 @@
+<div style=" margin-top: 20px;
+display: flex;
+flex-direction: column;">
+    <div>
+      <div *ngIf="dotColorObject?.original !== undefined">
+        <div [innerHTML]="dotColorObject?.original.display_text"></div>
+        </div>
+    </div>
+  <div *ngIf="dotColorObject?.original === undefined && dotColorObject?.dotData != undefined">
+    <div *ngFor="let dotColor in dotColorObject.dotData">
+        <h5 *ngIf="dotColor.header">
+          {{dotColor.header}}
+        </h5>
+        <h3 *ngIf="dotColor.header2">
+          {{dotColor.header}}
+        </h3>
+        <div *ngIf="dotColor.dotCommission">
+          <p>
+            {{dotColor.dotCommission}}
+          </p>
+        </div>
+        <div *ngIf="dotColor.dotText1">
+          <p>
+            {{dotColor.dotText1}}
+          </p>
+        </div>
+        <div *ngIf="dotColor.dotText2">
+          <p>
+            {{dotColor.dotText2}}
+          </p>
+        </div>
+        <div *ngIf="dotColor.dotText3">
+          <p>
+            {{dotColor.dotText3}}
+          </p>
+        </div>
+    </div>
+    <div *ngIf="dotColorObject.dotHtml">
+      <div [innerHTML]="dotColorObject.dotHtml"></div>
+    </div>
+  </div>
+</div>

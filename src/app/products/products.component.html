@@ -1,0 +1,21 @@
+<div class="content-card">
+    <select class="select-style" (change)="filterProducts($event.target)">
+      <option value="">Filter options:</option>
+      <option value="descending price">Higher Price</option>
+      <option value="ascending price">Lower Price</option>
+      <option value="descending speed">Higher Speed</option>
+      <option value="ascending speed">Lower Speed</option>
+    </select>
+    <div class="card-repeater">
+        <app-products-card *ngFor="let product of productList; let i = index" [product]="product" (idProductEmitter)="idProductSelected(i)"></app-products-card>
+    </div>
+    <div class="card-button">
+        <div style="padding-right: 2px;">
+            <button class="button button-orange button-shadow" (click)="previous()" type="button">Previous</button>
+        </div>
+        <div style="padding-left: 2px;">
+            <button class="button button-orange button-shadow" (click)="submit()" type="button" [disabled]="!selectedProduct" [ngClass]="{'button-disabled': !selectedProduct}">Next</button>
+        </div>
+    </div>
+</div>
+<app-loader [loaderOn]="loaderOn" [loaderTitle]="loaderTitle"></app-loader>

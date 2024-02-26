@@ -1,0 +1,24 @@
+<div class="calendar">
+    <div class="header">
+        <button class="btn btn-orange" (click)="previousMonth()">Previous Month</button>
+        <app-date-range style="margin-top: 14px;" (setRange)="setRange($event)"></app-date-range>
+        <span *ngIf="earthlinkCoreData.appointment.date != '' && earthlinkCoreData.appointment.date != null" class="installationDate">Installation date: {{earthlinkCoreData.appointment.date | dateFormatted}}  {{earthlinkCoreData.appointment.startTime | convert12HourFormat}}</span>
+        <span *ngIf="earthlinkCoreData.appointment.date == '' || earthlinkCoreData.appointment.date == null" class="installationDate">Installation date: {{earthlinkCoreData.appointment.date}}  {{earthlinkCoreData.appointment.startTime}}</span>
+        <h2 class="currentMonth">{{ currentMonth | date: 'MMMM yyyy' }}</h2>
+        <button class="btn btn-orange" (click)="nextMonth()">Next Month</button>
+    </div>
+    <div class="weekdays">
+        <div *ngFor="let day of daysOfWeek" class="weekday">{{ day }}</div>
+    </div>
+    <div class="days">
+        <div *ngFor="let day of calendarDays; let i = index" class="day">
+            {{ day.frameDate.getDate()}}
+            <div class="appointments">
+                <div *ngFor="let appointment of day.appointments; let i = index" (click)="selectedDate(appointment)" class="appointment" [ngStyle]="{'background-color': appointment.selected? '#00AE42' : getBgColor(i)}" [ngClass]="{'selected-appointment': appointment.selected}">
+                    {{ appointment.from | convert12HourFormat}} - {{ appointment.to | convert12HourFormat}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-loader [loaderOn]="loaderOn" [loaderTitle]="loaderTitle"></app-loader>

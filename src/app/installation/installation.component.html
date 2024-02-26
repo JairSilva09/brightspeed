@@ -1,0 +1,20 @@
+<div class="container-fullcalendar">
+    <app-monthly-calendar (selectedDateEmit)="selectedDate = true"></app-monthly-calendar>
+    <div style=" margin-top: 20px;">
+    </div>
+    <div class="card-button">
+        <div style="padding-left: 10px;">
+            <button class="button button-orange button-shadow" (click)="previous()" type="button">Previous</button>
+        </div>
+        <div>
+            <button class="button button-orange button-shadow" (click)="refreshPage()" type="button">Refresh</button>
+        </div>
+        <div style="padding-right: 10px;">
+            <button class="button button-orange button-shadow" (click)="continue()" type="button" [disabled]="!isDisabled()" [ngClass]="{'button-disabled': !isDisabled(), 'btn':selectedDate }">Next
+            </button>
+            <!-- <button class="button button-orange button-shadow" (click)="continue()" type="button">Next
+            </button> -->
+        </div>
+    </div>
+</div>
+<app-loader [loaderOn]="loaderOn" [loaderTitle]="loaderTitle"></app-loader>

@@ -1,0 +1,207 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+@import "../styles/responsive.scss";
+.card-repeater {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 99px;
+    justify-content: flex-start;
+    margin-left: 1%;
+}
+
+.card-repeater>app-products-card {
+    flex-basis: 25%;
+}
+
+.button {
+    border: 0;
+}
+
+.button-orange {
+    background-color: $btn-color-orange;
+    color: white;
+    padding: 20px;
+}
+
+.button-disabled {
+    background-color: $btn-color-grey;
+    color: white;
+}
+
+.card-button {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 125px;
+}
+
+.button-shadow {
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.input-style {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    &:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #04a04b;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(4, 160, 75, .25);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .content-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-repeater {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 86px;
+    }
+    .card-repeater>app-products-card {
+        flex-basis: 50%;
+    }
+}
+
+.select-style {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin: 20px 0px 0px 20px;
+    width: 500px;
+    &:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #04a04b;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(4, 160, 75, .25);
+    }
+}
+
+.title {
+    color: $color-blue;
+    border-bottom: solid 3px$color-blue;
+    border-bottom-color: $color-blue;
+    font-size: 16px;
+    font-weight: 600;
+    width: 98%;
+    display: flex;
+    margin: 10px;
+    margin-left: 22px;
+    @media only screen and (max-width: 1200px) {
+        width: 100%;
+    }
+    @media (min-width: 1200px) {
+        .title {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.example-form {
+    display: flex;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    @media only screen and (max-width: 1200px) {
+        flex-direction: column;
+        align-items: center;
+        max-width: none;
+    }
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+td {
+    padding-right: 8px;
+}
+
+.inputs {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 22px;
+    .form {
+        display: flex;
+        flex-direction: row;
+        gap: 46px;
+    }
+    .inputs1 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 60%;
+        @media only screen and (max-width: 1200px) {
+            margin: 0px;
+            .form {
+                display: flex;
+                gap: 11px;
+                flex-direction: column!important;
+            }
+        }
+    }
+    .inputs2 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 40%;
+        @media only screen and (max-width: 1200px) {
+            margin: 0px;
+            .form {
+                display: flex;
+                gap: 11px;
+                flex-direction: column!important;
+            }
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+        margin: 10px;
+        .form {
+            display: flex;
+            gap: 11px;
+            flex-direction: column!important;
+        }
+    }
+}
+
+.input-style {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    &:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #04a04b;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(4, 160, 75, .25);
+    }
+}

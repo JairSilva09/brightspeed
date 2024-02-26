@@ -1,0 +1,218 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+@import "../styles/responsive.scss";
+.content {
+    width: 98%;
+    height: 85%;
+    background-color: $content-background;
+    margin: 5px;
+    @media only screen and (max-width: 1200px) {
+        width: 100%;
+        height: 100%;
+        margin: -13px!important;
+    }
+}
+
+.row {
+    display: flex;
+}
+
+.card {
+    background-color: $color-blue;
+    ;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.card-header {
+    padding: 4px;
+}
+
+.btn-toggle {
+    background-color: $color-blue;
+    ;
+    border: none;
+    color: $btn-color-orange;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    text-align: left;
+}
+
+.card-body {
+    display: none;
+    padding: 10px;
+}
+
+.card.open .card-body {
+    display: block;
+}
+
+.matcard {
+    border: 2px solid $color-blue;
+    ;
+    border-radius: 5px;
+    width: 120%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    height: 96%;
+    .matcard-header {
+        font-weight: 400;
+        font-size: 30px;
+        background-color: white;
+        font-weight: 600;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: $color-blue;
+        .price {
+            font-size: 25px;
+        }
+    }
+    .bar {
+        height: 10px;
+        background-image: linear-gradient(to right, $color-blue, $color-green1);
+        width: 100%;
+    }
+    .matcard-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        .text1 {
+            display: flex;
+            border-bottom: 2px solid $color-black;
+            width: 90%;
+            flex-direction: column;
+            align-items: center;
+            padding: 13px;
+        }
+        .text-red {
+            color: $color-red;
+        }
+        .text2 {
+            display: flex;
+            border-bottom: 2px solid $color-black;
+            width: 90%;
+            flex-direction: column;
+            align-items: center;
+            padding: 13px;
+            color: $border-color-green;
+            .row2 {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+            }
+        }
+        .text3 {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 2px solid $color-black;
+            width: 90%;
+            padding: 13px;
+            .column1 {
+                display: flex;
+                flex-direction: row;
+                gap: 30px;
+                align-items: center;
+                justify-content: center;
+            }
+            .speed-unit,
+            ng-binding {
+                color: $color-orange;
+                font-size: 25px;
+            }
+        }
+        .btn-green {
+            background-color: $color-green1;
+            color: $btn-color-blue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 92%;
+        }
+        hr {
+            color: rgb(104, 104, 104);
+        }
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid $color-blue;
+            border-radius: 5px;
+            color: white;
+            background-color: $color-blue;
+            transition: color 0.3s, background-color 0.3s;
+            width: 200px;
+        }
+        .button:hover {
+            color: $color-blue;
+            background-color: transparent;
+        }
+        li {
+            font-size: 12px;
+            font-weight: 500;
+            color: $color-blue;
+        }
+    }
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.selected-matcard {
+    border-color: white !important;
+    .matcard-header,
+    .matcard-content,
+    li {
+        color: white !important;
+    }
+}
+
+.matcard {
+    // El resto de tus estilos para .matcard
+}
+
+.selected-ul {
+    margin-top: 36px !important;
+}
+
+.selected-li {
+    color: white !important;
+}
+
+.selected-matcard-header {
+    color: white !important;
+    background: transparent !important;
+    height: 37px;
+}
+
+.selected-matcard-content {
+    background-image: linear-gradient(to top, $color-blue, $color-green1);
+    color: white;
+    height: 100%;
+    border: 2px solid $color-blue;
+}
+
+.selected-button {
+    color: white !important;
+    background-color: $color-green2 !important;
+}
+
+@media only screen and (max-width: 1200px) {
+    .matcard {
+        margin-left: 17px;
+        width: 92%;
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,121 @@
+<div class="content-SideCart">
+    <h2 class="txt-shopping" style="  font-size: 1.75rem;">Shopping cart</h2>
+    <div style="display: flex; flex-direction: column;    line-height: 1.7;">
+        <div> <span style="font-size: 20px;">TransactionsID: <span class="product-data">{{earthlinkCoreData.transactionId}}
+        </span></span>
+        </div>
+        <div> <span style="font-size: 20px;">DNIS: <span class="product-data">{{earthlinkCoreData.dnis}}
+        </span></span>
+        </div>
+        <div> <span style="font-size: 20px;">Cart Status: <span class="product-data">Pending
+        </span></span>
+        </div>
+        <div> <span style="font-size: 20px;">name: <span class="product-data">{{earthlinkCoreData.firstName}}
+          {{earthlinkCoreData.lastName}}
+        </span></span>
+        </div>
+        <div> <span style="font-size: 20px;">Customer Phone Number: <span class="product-data">{{earthlinkCoreData.phone}}
+        </span></span>
+        </div>
+        <div> <span style="font-size: 20px;">Customer Email: <span class="product-data">{{earthlinkCoreData.email}} </span>
+            </span>
+        </div>
+        <hr style="margin-bottom: 10px;">
+        <div>
+            <span style="font-size: 20px;">Service Address:
+              <span class="product-data">
+                {{earthlinkCoreData.addressLine1}}
+              </span>
+            </span>
+            <br>
+            <span style="font-size: 20px;">City:
+              <span class="product-data">
+                {{earthlinkCoreData.serviceCity}}
+              </span>
+            </span>
+            <br>
+            <span style="font-size: 20px;">State:
+              <span class="product-data">
+                {{earthlinkCoreData.serviceState}}
+              </span>
+            </span>
+            <br>
+            <span style="font-size: 20px;">Zip Code:
+              <span class="product-data">
+                {{earthlinkCoreData.serviceZip}}
+              </span>
+            </span>
+        </div>
+        <hr style="margin-bottom: 10px;">
+        <div><span style="font-size: 20px;">Billing Addresss: <span
+          class="product-data">{{earthlinkCoreData.infoBilling.addressLine1}}{{earthlinkCoreData.infoBilling.addressLine2}}
+          {{earthlinkCoreData.infoBilling.city}} {{earthlinkCoreData.infoBilling.state}}
+          {{earthlinkCoreData.infoBilling.zipCode}}
+        </span> </span>
+        </div>
+        <hr style="margin-bottom: 10px;">
+
+        <div>
+            <div style=" display: flex;
+        flex-direction: column; ">
+                <h3 style="display: inline-block; width: 300px;margin-bottom: 0px;">Products</h3>
+                <span class="product-data">{{earthlinkCoreData.showingCart.productInternet.planName}}</span>
+                <hr style="margin-bottom: 10px;">
+            </div>
+
+            <!-- <div style="display: flex;flex-direction: column; ">
+                <h3 style="display: inline-block; width: 300px;margin-bottom: 0px;">Once</h3>
+                <div *ngFor="let option of showingCart?.cart_items" style="font-size: 15px;">
+                    <div *ngIf="option.prices">
+
+                        <div *ngIf="option.prices[0]?.recurrence=='Once'">
+                            <span> {{option.name}}:</span>
+                            <span class="product-data"> {{showingCart?.product.PlanName}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <hr style="margin-bottom: 10px;">
+        </div>
+        <div style="display: flex;
+        flex-direction: column; ">
+            <h3 style="display: inline-block; width: 300px;margin-bottom: 0px;">Monthly</h3>
+
+            <div style="font-size: 15px;">
+                <div *ngIf="earthlinkCoreData.showingCart.productInternet">
+                    <div>
+                        <span> {{earthlinkCoreData.showingCart.productInternet.planName}}:</span>
+                        <span class="product-data">${{earthlinkCoreData.showingCart.productInternet.recurringAmount}} </span>
+                    </div>
+                </div>
+            </div>
+            <hr style="margin-bottom: 10px;">
+        </div>
+        <div *ngIf="earthlinkCoreData.selectedIsgRewards.value > 0" style="display: flex;flex-direction: column;">
+            <h3 style="display: inline-block; width: 300px;margin-bottom: 0px;">ISG Reward</h3>
+
+            <div>
+                <span style="font-size: 15px;">Gift Card: <span class="product-data">${{earthlinkCoreData.isgGiftCard}}</span></span>
+            </div>
+            <hr style="margin-bottom: 10px;">
+        </div>
+        <!-- <div style="display: flex;
+          flex-direction: column; ">
+            <h3 class="txt-green" style="display: inline-block; width: 300px;margin-bottom: 0px;">Total Monthly</h3>
+            <span style="font-size: 15px;" class="product-data" *ngIf="showingCart?.cart_total_prices">
+              ${{ showingCart?.cart_total_prices[0]?.amount?.value }}
+            </span>
+            <hr style="margin-bottom: 10px;">
+            <h3 class="txt-green" style="display: inline-block; width: 300px;margin-bottom: 0px;">Total Once</h3>
+            <span style="font-size: 15px;" class="product-data" *ngIf="showingCart?.cart_total_prices">${{showingCart?.cart_total_prices[1]?.amount.value?showingCart.cart_total_prices[1]?.amount.value:0}}</span>
+            <hr style="margin-bottom: 10px;">
+        </div> -->
+        <div class="box-menss">
+            <div *ngFor="let message of messages" class="message">
+                <h3>{{ message.messageType }}</h3>
+                <p>{{ message.messageDescription }}</p>
+            </div>
+        </div>
+        <button class="button-orange" (click)="resetCart()" type="button">RESET CART</button>
+    </div>
+</div>

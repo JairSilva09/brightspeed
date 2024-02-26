@@ -1,0 +1,96 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+@import "../styles/responsive.scss";
+.content-SideCart {
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 69px;
+    width: -webkit-fill-available;
+    padding: 20px;
+    height: 85%;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+ ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 8px;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+.txt-shopping {
+    margin-bottom: 20px;
+    color: $color-blue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid;
+}
+
+.txt-green {
+    display: inline-block;
+    margin-bottom: 0px;
+    color: $vs-blueO-button;
+}
+
+.side-cart-container {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.side-cart-heading {
+    margin-bottom: 20px;
+}
+
+.side-cart-section {
+    margin-bottom: 20px;
+}
+
+.box-menss {
+    width: 100%;
+    height: 308PX;
+    overflow: scroll;
+}
+
+.sales-code {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-cart-subheading {
+    display: inline-block;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.side-cart-text-group {
+    display: inline-block;
+}
+
+.button-orange {
+    background-color: $btn-color-orange;
+    border-radius: 5px;
+    border: none;
+    color: $btn-color-blue;
+    padding: 10px 20px;
+}
+
+.product-data {
+    font-size: 20px;
+    color: $text-orange;
+}
+
+h3 {
+    font-size: 20px;
+}

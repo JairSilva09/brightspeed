@@ -1,0 +1,150 @@
+<div style="margin: 30px; display: flex; flex-direction: column; gap: 1px;">
+    <div class="content">
+
+        <div class="title">
+            <h3>Your order was placed successfully!!!</h3>
+        </div>
+        <div style="margin: 25px;">
+
+            <div>
+                <div style="margin-bottom: 50px;">
+                    <h4 class="titleH4">
+                        Service Address: <span class="text-orange">{{earthlinkCoreData.addressLine1}}</span>
+                        <span class="text-orange">
+                          ,{{earthlinkCoreData.serviceCity}}
+                        </span>
+                        <span class="text-orange">
+                          ,{{earthlinkCoreData.serviceState}}
+                        </span>
+                    </h4>
+                    <h4 class="titleH4">
+                        Zip Code: <span class="text-orange">{{earthlinkCoreData.serviceZip}}</span>
+                    </h4>
+                </div>
+                <div style="margin-bottom: 50px;">
+                    <h4 class="titleH4">
+                        Billing Account: <span class="text-orange">{{earthlinkCoreData.infoBilling.addressLine1}}</span>
+                    </h4>
+                </div>
+                <div style="margin-bottom: 50px;">
+                    <h4 class="titleH4">
+                        Package and customizations:
+                    </h4>
+                    <strong>Monthly:</strong>
+                    <ul style="list-style-type: none; ">
+                        <li style="display: flex; justify-content: space-between; font-style: italic;">
+
+                            <div style="display: flex; justify-content: space-between; width: 90%;">
+                                <div class="col-md-10">
+                                    {{earthlinkCoreData.showingCart.productInternet.planName}}
+                                </div>
+                                <div class="text-orange" class="col-md-2">
+                                    ${{earthlinkCoreData.showingCart.productInternet.recurringAmount}}
+                                </div>
+                            </div>
+                        </li>
+                        <li class="text-orange" style="display: flex; justify-content: space-between; width: 90%;">
+                            <div class="col-md-10">
+                                Total
+                            </div>
+                            <div class="col-md-2">
+                                ${{earthlinkCoreData.showingCart.productInternet?earthlinkCoreData.showingCart.productInternet.recurringAmount:0}}
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- <strong>One time:</strong>
+                    <ul style="list-style-type: none;">
+
+                        <li *ngFor="let option of confirmationData.cart_items" style="display: flex; justify-content: space-between; font-style: italic;">
+
+
+                            <div *ngIf="option.prices && option?.prices[0]?.recurrence=='Once'" style="display: flex; justify-content: space-between; width: 90%;">
+                                <div class="col-md-10">
+                                    {{option.name}}
+                                </div>
+                                <div class="text-orange" class="col-md-2">
+                                    ${{option.prices[0].amount.value}}
+                                </div>
+                            </div>
+                        </li>
+                        <li class="text-orange" style="display: flex; justify-content: space-between; width: 90%;">
+                            <div class="col-md-10">
+                                Total
+                            </div>
+                            <div class="col-md-2">
+                                ${{confirmationData?.cart_total_prices[1]?.amount.value?confirmationData.cart_total_prices[1]?.amount.value:0}}
+                            </div>
+                        </li>
+                    </ul> -->
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div>
+                    <h4>
+                        Installation appointment: <span class="text-orange"><strong>{{this.earthlinkCoreData.appointment.date | dateFormatted}} {{this.earthlinkCoreData.appointment.startTime | convert12HourFormat}} - {{this.earthlinkCoreData.appointment.endTime | convert12HourFormat}}</strong></span>
+                    </h4>
+                </div>
+                <!---->
+                <div>
+                    <h4 class="titleH4">
+                        Mandatory Disclosure:
+                    </h4>
+                    <div class="well">
+                        <div style="margin: 25px; padding-top: 50px; padding-bottom: 50px;">
+                            <!-- <p>Your order is complete & your billing account is:<b>{{earthlinkCoreData.billingAccountId}}</b> <br>
+                                <br> the amount that you were charged today is:<b> ${{confirmationData?.cart_total_prices[1]?.amount.value?confirmationData.cart_total_prices[1]?.amount.value:0}}</b>
+                                <br> and your monthly will be <b>${{confirmationData?.cart_total_prices[0]?.amount.value?confirmationData.cart_total_prices[0]?.amount.value:0}}</b>
+                            </p> -->
+                            <p>
+                                <br> the amount that you were charged today is:<b> ${{earthlinkCoreData.showingCart.productInternet?earthlinkCoreData.showingCart.productInternet.recurringAmount:0}}</b>
+                                <br> and your monthly will be <b>${{earthlinkCoreData.showingCart.productInternet?earthlinkCoreData.showingCart.productInternet.recurringAmount:0}}</b>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <!-- <div *ngIf="earthlinkCoreData.selectedIsgRewards">
+                    <div class="well">
+                        <div style="margin: 25px; padding-top: 50px; padding-bottom: 50px;">
+                            <div class="alert alert-success" role="alert" *ngIf="giftCardApplied">
+                                <h4 class="alert-heading">Congratulations!</h4>
+                                <p>You have apply a gift card for this order.</p>
+                            </div>
+                            <h3>Reward Details</h3>
+                            <div class="w-100">
+                                <p><b>Prepaid Card Disclosures</b></p>
+                                <p>
+                                    This prepaid card is courtesy of ISG, an authorized retailer of Fidium, and fulfilled by Elite Fulfillment Group, who will send an Offer Email for steps to follow for redemption. You will have 60 days from activation date to redeem your prepaid card.
+                                    Once redeemed, your prepaid card will be shipped within 14 days. If you have any questions about your prepaid card status, please call Elite Fulfillment Group at
+                                    <a href="tel:1-800-938-7721">1-800-938-7721</a> or check online at
+                                    <a href="www.elitefulfillmentgroup.com/infinitydish">www.elitefulfillmentgroup.com/infinitydish</a>. Fidium has no affiliation with this prepaid card offer.
+                                </p>
+                                <div style="margin: 20px;">
+                                    <div>
+                                        <mat-checkbox [(ngModel)]="readGiftCardDisclosure">
+                                            <p style="margin-bottom: 0;" [ngClass]="readGiftCardDisclosure ? 'approve-permission' : 'decline-permission'">
+                                                Do you read this disclosures to the client?
+                                            </p>
+                                        </mat-checkbox>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>{{ earthlinkCoreData.selectedIsgRewards.name }} available. Would you like to apply your rewards to this order?
+                                <button *ngIf="readGiftCardDisclosure" class="button button-orange button-shadow" (click)="applyGiftCard()" [disabled]="giftCardApplied" [ngClass]="{'button-disabled': giftCardApplied}">Apply</button>
+                            </p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <app-dotcolor [dotColorObject]="dotColorObject"></app-dotcolor>
+                <!--                <app-giftcard></app-giftcard>-->
+            </div>
+        </div>
+    </div>
+</div>
+<app-loader [loaderOn]="loaderOn" [loaderTitle]="loaderTitle"></app-loader>
+<app-message [display]="answerWithError" [message]="ErrorMessage"></app-message>
